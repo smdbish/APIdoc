@@ -8,9 +8,11 @@
 
 `npm i` or `yarn`
 
+copy send_sample_request.js.bak to ./node_modules/apidoc/template/utils and replace send_sample_request.js
+
 ## start project
 
-`npm start` `start a express server to access apidoc`
+`npm start` -- start a express server to access apidoc
 
 ## build
 
