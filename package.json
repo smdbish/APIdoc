@@ -1,0 +1,19 @@
+{
+  "name": "apidocdemo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js",
+    "build": "apidoc -i app/routes/ -o app/public/apidoc/ --private false"
+  },
+  "author": "yby",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "apidoc": "^0.28.1"
+  }
+}
