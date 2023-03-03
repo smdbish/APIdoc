@@ -22,3 +22,9 @@ copy send_sample_request.js.bak to ./node_modules/apidoc/template/utils and repl
 
 `http://localhost:3000/apidoc`
 
+
+## change or update doc
+apidoc.config.js  -- config the apidoc: name, title, version, header, footer...
+each group, there is a file (*.js) in the folder ./routes. Now we have user.js, mouse.js, study.js, sample.js
+
+after change, just build again (`npm run build`), it will auto take effect. don't need to stop/start
