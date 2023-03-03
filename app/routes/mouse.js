@@ -122,7 +122,7 @@
  * @apiPermission Normal user. The customer should open API access.
  * 
  * @apiExample {curl} Example usage:
- *     curl -i "https://softmouse.net/external/v1/mouse?ownerUser_name=test&mouseSID=2278&mouseSID=2279
+ *     curl -i "https://softmouse.net/external/v1/mouse
 "  -H "Content-Type:application/json"  -H "Authorization:SMDB-oauthtoken CWKw%ij7h_&8c.VN0XDXwT#WqW!z.A70EmMI" -d "{\"ownerUser_name\":\"test\", \"mouseSID\":[2278,2279]}" -X GET
  *
  * @apiUse RequestHeader
@@ -151,7 +151,7 @@
  * @apiPermission Normal user. The customer should open API access.
  * 
  * @apiExample {curl} Example usage:
- *     curl -i "https://softmouse.net/external/v1/mouse?ownerUser_name=test&mouseSID=2278&mouseSID=2279
+ *     curl -i "https://softmouse.net/external/v1/mouse/list?ownerUser_name=test&mouseSID=2278&mouseSID=2279
 "  -H "Content-Type:application/json"  -H "Authorization:SMDB-oauthtoken CWKw%ij7h_&8c.VN0XDXwT#WqW!z.A70EmMI" -X GET
  *
  * @apiUse RequestHeader
