@@ -1,3 +1,4 @@
+--------------------------------------
 ## Appendix
 #### Message Code
 Code  | Description
