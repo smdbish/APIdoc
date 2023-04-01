@@ -9,7 +9,7 @@
  * @apiSuccess {String} respObj.portion Portion
  * @apiSuccess {String} respObj.partialCollDetails partial collection detail
  * @apiSuccess {String="Archived", "Pending Collection","Collected","Deleted"} respObj.state Sample State
- * @apiSuccess {String} respObj.collectedDate collected date
+ * @apiSuccess {Date} respObj.collectedDate collected date
  * @apiSuccess {String} respObj.collectedBy collected by
  * @apiSuccess {Number} respObj.studyId Study unique Id
  * @apiSuccess {String} respObj.seqId sequence Id
@@ -32,8 +32,8 @@
  * @apiSuccess {String} respObj.vectorTiter 
  * @apiSuccess {String} respObj.mouseline 
  * @apiSuccess {String} respObj.strain
- * @apiSuccess {String} respObj.birthDate
- * @apiSuccess {String} respObj.endDate
+ * @apiSuccess {Date} respObj.birthDate
+ * @apiSuccess {Date} respObj.endDate
  * @apiSuccess {String} respObj.mouseComment
  * @apiSuccess {String} respObj.sampleComment
  * @apiSuccess {Number} respObj.mouseSID

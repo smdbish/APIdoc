@@ -1,11 +1,11 @@
 module.exports = {
   name: "SoftMouse.NET API Specification", 
-  version: "1.0.0", // current version
+  version: "1.1.0", // current version
   description: "", // document description
   title: "SoftMouse.NET API Doc", // browser title
   url: "https://softmouse.net", // 
   // useHostUrlAsSampleUrl: false, 
-  sampleUrl: 'http://127.0.0.1/SMDB-1.0/external', // The prefix of urls for page testing. used for @apiSampleRequest, the prefix will be added to the url of @apiSampleRequest
+  sampleUrl: 'https://mouseapp.com/external', // The prefix of urls for page testing. used for @apiSampleRequest, the prefix will be added to the url of @apiSampleRequest
   // header and footer setting
   header: {
     title: "Description & Standard", // 
@@ -29,7 +29,7 @@ module.exports = {
   ],
   template: {
     forceLanguage: 'en', // 
-  	withCompare: true, // version comare, default is true
+    withCompare: true, // version comare, default is true
   	withGenerator: false, // display generator information on the bottom or not? default is true. e.g. "Generated with apidoc 0.28.1 - 2023-03-02T19:33:40.056Z"
     jQueryAjaxSetup: { // default ajax config
       headers: {
@@ -38,6 +38,8 @@ module.exports = {
             'Content-Type': 'application/json'
       }
     },
-    aloneDisplay: false, // display a api. deault: false
+    aloneDisplay: true, // display a api. deault: false
+    showRequiredLabels: true,  //default is false, 
+  	
   }
 }

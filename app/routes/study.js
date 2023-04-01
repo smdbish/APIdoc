@@ -4,30 +4,55 @@
 
 /**
  * @apiVersion 1.0.0
- * @api {get} /external/v1/study Check Study Name
- * @apiName checkStudyName
+ * @api {get} /external/v1/study Get Study Information
+ * @apiName getStudyInformation
  * @apiGroup Study
- * @apiDescription Used to check if a study already exists in SoftMouse.NET by Study Name.
+ * @apiDescription Used to get study information from SoftMouse.NET by Study Name.
  * 
  * @apiPermission Normal user. The customer should open API access.
  * @apiExample {curl} Example usage:
  *     curl -i "https://softmouse.net/external/v1/study?studyName=study20"  -H "Content-Type:application/json"  -H "Authorization:SMDB-oauthtoken MTAwMDAwMDAwMDU0.MEC-#uJGl->Bgv-7xbYqDdQH5cmN-9EjHR1u" -X GET
+ *  OR
+ *     curl -i "https://softmouse.net/external/v1/study?sinceDateTime=2022-01-01T01:01:01Z"  -H "Content-Type:application/json"  -H "Authorization:SMDB-oauthtoken MTAwMDAwMDAwMDU0.MEC-#uJGl->Bgv-7xbYqDdQH5cmN-9EjHR1u" -X GET
  * 
  * @apiUse RequestHeader
- * @apiParam {String} studyName Study Name
+ * @apiParam {String} [studyCode] Study Name
+ * @apiParam {DateTime} [sinceDateTime] Query all studies that were changed after this datetime
  * 
  * @apiUse ResponseFormat
+ * @apiUse StudyResponse
  * @apiSuccessExample {json} Success-Response:
  *     	HTTP/1.1 200 OK
  *		{
  *			"messageCode": "200",
- *			"messageDesc": "The study exists."
+ *			"messageDesc": "SUCCESS",
+ *			"respObj": [
+ *			    {
+ *			        "studyCode": "ISH3432-228",
+ *			        "projectName": "EG234",
+ *			        "startDate": "2022-08-04T04:00:00Z",
+ *			        "endDate": null,
+ *			        "studyType": null,
+ *			        "studyStatus": null,
+ *			        "details": "",
+ *			        "studyGoals": "test",
+ *			        "groupName": [
+ *			            "g1",
+ *			            "g2"
+ *		            ],
+ *			        "groupDetails": [
+ * 			            "",
+ * 			            ""
+ * 			        ],
+ *			        "lastUpdatedDateTime": "2022-08-06T03:27:54Z"
+ * 			    }
+ * 		    ]
  *		}
- * @apiSuccessExample {json} Success-Response:
+ * @apiErrorExample {json} Error-Response:
  *     	HTTP/1.1 200 OK
  *		{
  *			"messageCode": "406",
- *			"messageDesc": "The study exists."
+ *			"messageDesc": "The study does not exists."
  *		}
  * @apiUse TokenErrorResp
  * @apiSampleRequest /v1/study
@@ -81,15 +106,15 @@
  * @apiParam {String} [studyType] Study Type
  * @apiParam {String} [studyGoals] Study Goals
  * @apiParam {String} [status] 
- * @apiParam {String} [startDate] 
- * @apiParam {String} [endDate] 
+ * @apiParam {Date} [startDate] 
+ * @apiParam {Date} [endDate] 
  * @apiParam {String} [details] 
  * @apiParam {Object[]} [groupInfos] 
  * @apiParam {String} [groupInfos.groupName]
  * @apiParam {String} [groupInfos.numofanimal]
  * @apiParam {String} [groupInfos.groupdetails]
- * @apiParam {String} [groupInfos.fromDate]
- * @apiParam {String} [groupInfos.toDate]
+ * @apiParam {Date} [groupInfos.fromDate]
+ * @apiParam {Date} [groupInfos.toDate]
  * @apiParam {String} [groupInfos.treatment] 
  * @apiParam {String} [groupInfos.dose]
  * @apiParam {String} [groupInfos.route] 
@@ -207,15 +232,15 @@
  * @apiBody {String} [studyType] Study Type
  * @apiBody {String} [studyGoals] Study Goals
  * @apiBody {String} [status] 
- * @apiBody {String} [startDate] 
- * @apiBody {String} [endDate] 
+ * @apiBody {Date} [startDate] 
+ * @apiBody {Date} [endDate] 
  * @apiBody {String} [details] 
  * @apiBody {Object} [groupInfos] 
  * @apiBody {String} groupInfos.[groupName] 
  * @apiBody {String} groupInfos.[numofanimal] 
  * @apiBody {String} groupInfos.[groupdetails] 
- * @apiBody {String} groupInfos.[fromDate] 
- * @apiBody {String} groupInfos.[toDate] 
+ * @apiBody {Date} groupInfos.[fromDate] 
+ * @apiBody {Date} groupInfos.[toDate] 
  * @apiBody {String} groupInfos.[treatment] 
  * @apiBody {String} groupInfos.[dose] 
  * @apiBody {String} groupInfos.[route] 
@@ -224,10 +249,10 @@
  * @apiBody {String} groupInfos.[lotnumber] 
  * @apiBody {Object[]} groupInfos.animals
  * @apiBody {String} groupInfos.animals.[animalId] 
- * @apiBody {String} groupInfos.animals.[addedDate] 
+ * @apiBody {Date} groupInfos.animals.[addedDate] 
  * @apiBody {Object[]} takedownInfos 
  * @apiBody {String} takedownInfos.[name] 
- * @apiBody {String} takedownInfos.[date] 
+ * @apiBody {Date} takedownInfos.[date] 
  * @apiBody {Number} takedownInfos.[perfusion] 
  * @apiBody {Object[]}  takedownInfos.[samples]
  * @apiBody {String} takedownInfos.samples.[sample] 
@@ -238,3 +263,20 @@
  */
 
 
+  
+
+
+/**
+ * @apiDefine StudyResponse
+ * @apiSuccess {String} studyCode Study Code
+ * @apiSuccess {String} projectName Project Name
+ * @apiSuccess {Date} startDate Start Date
+ * @apiSuccess {Date} endDate End Date
+ * @apiSuccess {String} studyType Study Type
+ * @apiSuccess {String} studyStatus Study Status
+ * @apiSuccess {String} details Study Details
+ * @apiSuccess {String} studyGoals Study Goals
+ * @apiSuccess {String[]} groupName Group Name List
+ * @apiSuccess {String[]} groupDetails Group Details List
+ * @apiSuccess {DateTime} lastUpdatedDateTime Last updated DateTime 
+ */ 
