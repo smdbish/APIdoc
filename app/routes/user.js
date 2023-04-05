@@ -76,7 +76,7 @@
  
  /**
  * @apiVersion 1.0.0
- * @api {post} /external/v1/user/refreshToken Refresh token
+ * @api {post} /external/v1/user/refreshToken Refresh Token
  * @apiName refreshToken
  * @apiGroup User
  * @apiDescription Used if the user token is expired. Call this API to get a new user token.

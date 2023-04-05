@@ -260,7 +260,7 @@
  
   /**
  * @apiVersion 1.1.0
- * @api {get} /external/v1.1/mouse Get Mouse list
+ * @api {get} /external/v1.1/mouse Get Mouse List
  * @apiName getMouse
  * @apiGroup Mouse
  * @apiDescription Get mouse information api
