@@ -242,8 +242,11 @@
  * @apiPermission Normal user. The customer should open API access.
  * 
  * @apiExample {curl} Example usage:
- *     curl -i "https://softmouse.net/external/v1/mouse
-"  -H "Content-Type:application/json"  -H "Authorization:SMDB-oauthtoken CWKw%ij7h_&8c.VN0XDXwT#WqW!z.A70EmMI" -d "{\"ownerUser_name\":\"test\", \"mouseSID\":[2278,2279]}" -X GET
+ *     curl -i "https://softmouse.net/external/v1/mouse" \
+ *          -H "Content-Type:application/json"  \
+ *          -H "Authorization:SMDB-oauthtoken CWKw%ij7h_&8c.VN0XDXwT#WqW!z.A70EmMI" \
+ *          -d "{\"ownerUser_name\":\"test\", \"mouseSID\":[2278,2279]}" \
+ *          -X GET
  *
  * @apiUse RequestHeader
  * @apiBody {Number[]} [mouseIds] Mouse Id array
@@ -270,20 +273,35 @@
  * @apiPermission Normal user. The customer should open API access.
  * 
  * @apiExample {curl} Example usage:
- *     curl -i "https://softmouse.net/external/v1.1/mouse?ownerUser_name=test&mouseSID=2278&mouseSID=2279
-"  -H "Content-Type:application/json"  -H "Authorization:SMDB-oauthtoken CWKw%ij7h_&8c.VN0XDXwT#WqW!z.A70EmMI" -X GET
-* OR
-*     curl -i "https://softmouse.net/external/v1.1/mouse?studyCode=study2021-01-04-004&studyCode=study2021-01-05-004
-"  -H "Content-Type:application/json"  -H "Authorization:SMDB-oauthtoken CWKw%ij7h_&8c.VN0XDXwT#WqW!z.A70EmMI" -X GET
-* OR
-*     curl -i "https://softmouse.net/external/v1.1/mouse?sinceDateTime=2021-02-08T00:00:01Z&ownerUser_name=David Yu&ownerUser_name=Meabc Lu
-"  -H "Content-Type:application/json"  -H "Authorization:SMDB-oauthtoken CWKw%ij7h_&8c.VN0XDXwT#WqW!z.A70EmMI" -X GET
-* OR
-*     curl -i "https://softmouse.net/external/v1.1/mouse?sinceDateTime=2023-02-08T00:00:01Z&pageNo=2
-"  -H "Content-Type:application/json"  -H "Authorization:SMDB-oauthtoken CWKw%ij7h_&8c.VN0XDXwT#WqW!z.A70EmMI" -X GET
-* OR
-*     curl -i "https://softmouse.net/external/v1.1/mouse?sinceDateTime=2023-01-08T00:00:01Z&mouseState=ENDED&mouseState=ORDERED
-"  -H "Content-Type:application/json"  -H "Authorization:SMDB-oauthtoken CWKw%ij7h_&8c.VN0XDXwT#WqW!z.A70EmMI" -X GET
+ *     curl -i "https://softmouse.net/external/v1.1/mouse?ownerUser_name=test&mouseSID=2278&mouseSID=2279"  \
+ *          -H "Content-Type:application/json"  \
+ *          -H "Authorization:SMDB-oauthtoken CWKw%ij7h_&8c.VN0XDXwT#WqW!z.A70EmMI" \
+ *          -X GET
+ * 
+ * @apiExample {curl} Example usage:
+ *     curl -i "https://softmouse.net/external/v1.1/mouse?studyCode=study2021-01-04-004&studyCode=study2021-01-05-004" \
+ *          -H "Content-Type:application/json"  \
+ *          -H "Authorization:SMDB-oauthtoken CWKw%ij7h_&8c.VN0XDXwT#WqW!z.A70EmMI" \
+ *          -X GET
+ * 
+ * @apiExample {curl} Example usage:
+ *     curl -i "https://softmouse.net/external/v1.1/mouse?sinceDateTime=2021-02-08T00:00:01Z&ownerUser_name=David Yu&ownerUser_name=Meabc Lu"  \
+ *          -H "Content-Type:application/json" \
+ *          -H "Authorization:SMDB-oauthtoken CWKw%ij7h_&8c.VN0XDXwT#WqW!z.A70EmMI" \
+ *          -X GET
+ * 
+ * @apiExample {curl} Example usage:
+ *     curl -i "https://softmouse.net/external/v1.1/mouse?sinceDateTime=2023-02-08T00:00:01Z&pageNo=2"  \
+ *          -H "Content-Type:application/json"  \
+ *          -H "Authorization:SMDB-oauthtoken CWKw%ij7h_&8c.VN0XDXwT#WqW!z.A70EmMI" \
+ *          -X GET
+ * 
+ * @apiExample {curl} Example usage:
+ *     curl -i "https://softmouse.net/external/v1.1/mouse?sinceDateTime=2023-01-08T00:00:01Z&mouseState=ENDED&mouseState=ORDERED"  \
+ *          -H "Content-Type:application/json"  \
+ *          -H "Authorization:SMDB-oauthtoken CWKw%ij7h_&8c.VN0XDXwT#WqW!z.A70EmMI" \
+ *          -X GET
+ * 
  *      
  * @apiUse RequestHeader
  * @apiParam {Number[]} [mouseIds] Mouse Id array

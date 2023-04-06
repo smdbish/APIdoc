@@ -11,9 +11,16 @@
  * 
  * @apiPermission Normal user. The customer should open API access.
  * @apiExample {curl} Example usage:
- *     curl -i "https://softmouse.net/external/v1/study?studyName=study20"  -H "Content-Type:application/json"  -H "Authorization:SMDB-oauthtoken MTAwMDAwMDAwMDU0.MEC-#uJGl->Bgv-7xbYqDdQH5cmN-9EjHR1u" -X GET
- *  OR
- *     curl -i "https://softmouse.net/external/v1/study?sinceDateTime=2022-01-01T01:01:01Z"  -H "Content-Type:application/json"  -H "Authorization:SMDB-oauthtoken MTAwMDAwMDAwMDU0.MEC-#uJGl->Bgv-7xbYqDdQH5cmN-9EjHR1u" -X GET
+ *     curl -i "https://softmouse.net/external/v1/study?studyName=study20"  \
+ *          -H "Content-Type:application/json"  \
+ *          -H "Authorization:SMDB-oauthtoken MTAwMDAwMDAwMDU0.MEC-#uJGl->Bgv-7xbYqDdQH5cmN-9EjHR1u" \
+ *          -X GET
+ *
+ * @apiExample {curl} Example usage:
+ *     curl -i "https://softmouse.net/external/v1/study?sinceDateTime=2022-01-01T01:01:01Z"  \
+ *          -H "Content-Type:application/json"  \
+ *          -H "Authorization:SMDB-oauthtoken MTAwMDAwMDAwMDU0.MEC-#uJGl->Bgv-7xbYqDdQH5cmN-9EjHR1u" \
+ *          -X GET
  * 
  * @apiUse RequestHeader
  * @apiParam {String} [studyCode] Study Name
@@ -67,7 +74,20 @@
  * 
  * @apiPermission Normal user. The customer should open API access.
  * @apiExample {curl} Example usage:
- *     curl -v "http://127.0.0.1/SMDB-1.0/external/v1/study" -H "Content-Type:application/json" -H "Authorization:SMDB-oauthtoken MTAwMDAwMDAwMDU0.MEC-#uJGl->Bgv-7xbYqDdQH5cmN-9EjHR\!u" -d '{"projectName": "ISH234","protocols": ["protocol2"],"studyCode": "study2021-01-03-004","studyType": "2183578","studyGoals": "goals222","status": "status1","startDate": "2020-12-08","endDate": "2021-03-31"}' -X POST
+ *     curl -i "http://127.0.0.1/SMDB-1.0/external/v1/study" \
+ *          -H "Content-Type:application/json" \
+ *          -H "Authorization:SMDB-oauthtoken MTAwMDAwMDAwMDU0.MEC-#uJGl->Bgv-7xbYqDdQH5cmN-9EjHR\!u" \
+ *          -d '{
+ *                  "projectName": "ISH234",
+ *                  "protocols": ["protocol2"],
+ *                  "studyCode": "study2021-01-03-004",
+ *                  "studyType": "2183578",
+ *                  "studyGoals": "goals222",
+ *                  "status": "status1",
+ *                  "startDate": "2020-12-08",
+ *                  "endDate": "2021-03-31"
+ *               }' \
+ *         -X POST
  * 
  * @apiUse RequestHeader
  * @apiUse StudyRequest

@@ -144,7 +144,10 @@
  * 
  * @apiPermission Normal user. The customer should open API access.
  * @apiExample {curl} Example usage:
- *     curl -i "https://softmouse.net/external/v1/sample?studyName=study-2021-06-2901&syncStatus=0&state=0&numberPerPage=10&pageNo=1"  -H "Content-Type:application/json"  -H "Authorization:SMDB-oauthtoken MTAwMDAwMDAwMDU0.MEC-#uJGl->Bgv-7xbYqDdQH5cmN-9EjHR1u" -X GET
+ *     curl -i "https://softmouse.net/external/v1/sample?studyName=study-2021-06-2901&syncStatus=0&state=0&numberPerPage=10&pageNo=1"  \
+ *          -H "Content-Type:application/json"  \
+ *          -H "Authorization:SMDB-oauthtoken MTAwMDAwMDAwMDU0.MEC-#uJGl->Bgv-7xbYqDdQH5cmN-9EjHR1u" \
+ *          -X GET
  *
  * 
  * @apiUse RequestHeader
@@ -171,7 +174,10 @@
  * 
  * @apiPermission Normal user. The customer should open API access.
  * @apiExample {curl} Example usage:
- *     curl -i "https://softmouse.net/external/v1/sample/status?sampleId=20"  -H "Content-Type:application/json"  -H "Authorization:SMDB-oauthtoken MTAwMDAwMDAwMDU0.MEC-#uJGl->Bgv-7xbYqDdQH5cmN-9EjHR1u" -X PUT
+ *     curl -i "https://softmouse.net/external/v1/sample/status?sampleId=20"  \
+ *          -H "Content-Type:application/json"  \
+ *          -H "Authorization:SMDB-oauthtoken MTAwMDAwMDAwMDU0.MEC-#uJGl->Bgv-7xbYqDdQH5cmN-9EjHR1u" \
+ *          -X PUT
  * 
  * @apiUse RequestHeader
  * @apiParam {Number} [studyId] Study Id

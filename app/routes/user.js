@@ -17,7 +17,10 @@
  * @apiBody {String} password Password
  * 
  * @apiExample {curl} Example usage:
- *     curl -i "https://softmouse.net/external/v1/user/login"  -H "Content-Type:application/json"  -d "{\"username\":\"test\", \"password\":\"12345678\"}"  -X POST
+ *     curl -i "https://softmouse.net/external/v1/user/login"  \
+ *          -H "Content-Type:application/json"  \
+ *          -d "{\"username\":\"test\", \"password\":\"12345678\"}"  \
+ *          -X POST
  *
  * @apiUse ResponseFormat
  * @apiSuccess {String} respObj Access Token
@@ -59,7 +62,10 @@
  * @apiPermission Normal user. The customer should open API access.
  * 
  * @apiExample {curl} Example usage:
- *     curl -i "https://softmouse.net/external/v1/user/logout"  -H "Content-Type:application/json"  -H "Authorization:SMDB-oauthtoken CWKw%ij7h_&8c.VN0XDXwT#WqW!z.A70EmMI" -X POST
+ *     curl -i "https://softmouse.net/external/v1/user/logout"  \
+ *          -H "Content-Type:application/json"  \
+ *          -H "Authorization:SMDB-oauthtoken CWKw%ij7h_&8c.VN0XDXwT#WqW!z.A70EmMI" \
+ *          -X POST
  * @apiUse RequestHeader
  * 
  * @apiUse ResponseFormat
@@ -84,7 +90,10 @@
  * @apiPermission Normal user. The customer should open API access.
  * 
  * @apiExample {curl} Example usage:
- *     curl -i "https://softmouse.net/external/v1/user/login"  -H "Content-Type:application/json"  -d "{\"username\":\"test\", \"token\":\"CWKw%ij7h_&8c.VN0XDXwT#WqW!z.A70EmMI\"}"  -X POST
+ *     curl -i "https://softmouse.net/external/v1/user/login"  \
+ *          -H "Content-Type:application/json"  \
+ *          -d "{\"username\":\"test\", \"token\":\"CWKw%ij7h_&8c.VN0XDXwT#WqW!z.A70EmMI\"}"  \
+ *          -X POST
  * @apiUse RequestHeader
  * 
  * @apiUse ResponseFormat
