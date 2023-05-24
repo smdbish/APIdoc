@@ -37,6 +37,7 @@
  * @apiSuccess {String} respObj.mouseComment
  * @apiSuccess {String} respObj.sampleComment
  * @apiSuccess {Number} respObj.mouseSID
+ * @apiSuccess {Number} respObj.physicalTag
  * @apiSuccessExample {json} Success-Response:
  *     	HTTP/1.1 200 OK
  *		{
@@ -80,7 +81,8 @@
  *           		"endDate": "2021-07-08T04:00:00Z",
  *           		"mouseComment": null,
  *           		"sampleComment": null,
- *           		"mouseSID": 611
+ *           		"mouseSID": 611,
+ *           		"physicalTag": "AS001"
  *			},
  *			{
  *          		"id": 2223,
@@ -119,7 +121,8 @@
  *	            "endDate": "2021-07-08T04:00:00Z",
  *		        "mouseComment": null,
  *		        "sampleComment": null,
- *		        "mouseSID": 611
+ *		        "mouseSID": 611,
+ *           		"physicalTag": null
  *		    }
  *		    ],
  *		    "totalPage": 335,
