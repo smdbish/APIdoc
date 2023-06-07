@@ -21,6 +21,7 @@ module.exports = {
     "Mouse",
     "Study",
     "Sample",
+    "Protocol",
     
 
     "login",
@@ -38,7 +39,7 @@ module.exports = {
             'Content-Type': 'application/json'
       }
     },
-    aloneDisplay: true, // display a api. deault: false
+    // aloneDisplay: true, // display a api. deault: false
     showRequiredLabels: true,  //default is false, 
   	
   }

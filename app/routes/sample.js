@@ -38,6 +38,13 @@
  * @apiSuccess {String} respObj.sampleComment
  * @apiSuccess {Number} respObj.mouseSID
  * @apiSuccess {Number} respObj.physicalTag
+ * @apiSuccess {Number} totalPage Total pages
+ * @apiSuccess {Number} currentPage Current page no
+ * @apiSuccess {Number} collectedSyncNum The number of records that were collected and synchronized
+ * @apiSuccess {Number} collectedNotSyncNum The number of records that were collected but not synchronized
+ * @apiSuccess {Number} pendingNum The number of records that are pending
+ * @apiSuccess {Number} archivedNum The number of records that were archived
+ * @apiSuccess {Number} totalNum The total number
  * @apiSuccessExample {json} Success-Response:
  *     	HTTP/1.1 200 OK
  *		{

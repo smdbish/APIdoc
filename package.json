@@ -17,6 +17,7 @@
       "Mouse",
       "Study",
       "Sample",
+      "Protocol",
       
   
       "login",
@@ -33,7 +34,7 @@
               "Content-Type": "application/json"
         }
       },
-      "aloneDisplay": true, 
+      "aloneDisplay": false, 
       "showRequiredLabels": true
       
     }
