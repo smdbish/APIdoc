@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 
 // app.use(express.static('app/public', {
-app.use(express.static('public/apidoc', {
+app.use(express.static('public/apidoc/', {
   extensions: ['htm', 'html'],
 }))
 
