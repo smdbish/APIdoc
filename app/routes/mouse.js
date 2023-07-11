@@ -310,6 +310,7 @@
  * @apiParam {Number[]} [mouseSID] Mouse SID array
  * @apiParam {String[]="ENDED","STOCK", "MATING", "WEANLING", "PUP","ORDERED"} [mouseState] Mouse State
  * @apiParam {String[]} [studyCode] Study Code
+ * @apiParam {String="ACTIVE"} [studyState] Study State
  * @apiParam {DateTime} [sinceDateTime] Return all changed mice after this datetime
  * @apiParam {Number} [numberPerPage] Number of Records per Page, default is 200
  * @apiParam {Number} [pageNo] Page No
