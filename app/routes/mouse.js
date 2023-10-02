@@ -142,6 +142,9 @@
  * @apiSuccess {String} respObj.genoType 
  * @apiSuccess {String} respObj.sampleMass
  * @apiSuccess {String} respObj.studyInfo
+ * @apiSuccess {String} respObj.cageSid 
+ * @apiSuccess {String} respObj.cageTag
+ * @apiSuccess {String} respObj.cageBarcode
  * @apiSuccess {DateTime} respObj.lastUpdatedDateTime
  * @apiSuccess {Number} totalPage
  * @apiSuccess {Number} currentPage
@@ -184,6 +187,9 @@
  *           		"genoType": "ATG-5(+/1), 2ans(+/+), Cre(+), hsf1a(+/-)",
  *           		"sampleMass": null,
  *           		"studyInfo": "Test1234 [1]",
+ *           		"cageSid": "155",
+ *           		"cageTag": "tag1001",
+ *           		"cageBarcode": "b000001",
  *           		"lastUpdatedDateTime": "2023-03-29T22:00:39Z"
  *       		},
  *  	   		{
@@ -218,6 +224,9 @@
  *           		"genoType": "ATG-5(+/1), 2ans(+/+), Cre(+), hsf1a(+/-)",
  *           		"sampleMass": null,
  *           		"studyInfo": "Test1234 [1]",
+ *           		"cageSid": "155",
+ *           		"cageTag": null,
+ *           		"cageBarcode": null,
  *           		"lastUpdatedDateTime": "2023-03-29T22:00:39Z"
  *		     }
  *		 	 ],
