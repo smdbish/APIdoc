@@ -19,6 +19,7 @@ module.exports = {
   order: [
     "User",
     "Mouse",
+    "Cage",
     "Study",
     "Sample",
     "Protocol",
