@@ -270,6 +270,7 @@
  * @apiSampleRequest /v1/mouse 
  */
  
+
   /**
  * @apiVersion 1.1.0
  * @api {get} /external/v1.1/mouse Get Mouse List
@@ -330,3 +331,97 @@
  * @apiUse TokenErrorResp
  * @apiSampleRequest /v1.1/mouse 
  */
+
+
+  
+ /**
+ * @apiDefine endMiceResp
+ *
+ * @apiSuccessExample {json} Success-Response:
+ * 
+ *     	HTTP/1.1 200 OK
+ *		{
+ *          "messageCode": "200",
+ *          "messageDesc": "2 animals are ended"
+ *      }
+ * 
+ * 
+ */
+
+  /**
+ * @apiVersion 1.1.0
+ * @api {put} /external/v1.1/mouse End Mice
+ * @apiName endMice
+ * @apiGroup Mouse
+ * @apiDescription End mice api
+ * It supports querying by mouse identifier with owners / mouse state / studyCode / since date time and end selected mice
+ * Mouse / a group of mice can be ended if the API user has Edit access for selected mice.
+ * 
+ * @apiPermission Normal user. The customer should open API access.
+ * 
+ * @apiExample {curl} Example usage:
+ *     curl -i "https://softmouse.net/external/v1.1/mouse?ownerUser_name=test&mouseSID=205&mouseSID=206"  \
+ *          -H "Content-Type:application/json"  \
+ *          -H "Authorization:SMDB-oauthtoken CWKw%ij7h_&8c.VN0XDXwT#WqW!z.A70EmMI" \
+ *          -d '{"endType" : "Missing",
+ *              "endReason" : "Flood"
+ *              }'
+ *          -X PUT
+ * 
+ * @apiExample {curl} Example usage:
+ *     curl -i "https://softmouse.net/external/v1.1/mouse??mouseSID=281&ownerUser_name=bluesky \
+ *          -H "Content-Type:application/json"  \
+ *          -H "Authorization:SMDB-oauthtoken CWKw%ij7h_&8c.VN0XDXwT#WqW!z.A70EmMI" \
+ *          -D '{
+ *                  "endDate":"2024-04-08T00:00:01Z",
+ *                  "endType": "Found Dead",
+ *                  "endReason":"Sick",
+ *                  "comment":"Involved in study"
+ *              }'
+ *          -X PUT
+ * 
+ * 
+ * @apiExample {curl} Example usage:
+ *     curl -i "https://softmouse.net/external/v1.1/mouse?mouseSID=223&studyCode=sc56  \
+ *          -H "Content-Type:application/json" \
+ *          -H "Authorization:SMDB-oauthtoken CWKw%ij7h_&8c.VN0XDXwT#WqW!z.A70EmMI" \
+ *          -D '{
+ *                  "endType": "Found Dead"
+ *              }'
+ *          -X PUT
+ * 
+ * @apiExample {curl} Example usage:
+ *     curl -i "https://softmouse.net/external/v1.1/mouse?mouseIds=1194515&mouseIds=1194516"  \
+ *          -H "Content-Type:application/json"  \
+ *          -H "Authorization:SMDB-oauthtoken CWKw%ij7h_&8c.VN0XDXwT#WqW!z.A70EmMI" \
+ *         -D '{
+ *                  "endDate":"2024-02-08T00:00:01Z",
+ *                  "endType": "Sacrificed"
+ *              }'
+ *          -X PUT
+ * 
+ * 
+ *      
+ * @apiUse RequestHeader
+ * @apiParam {Number[]} [mouseIds] Mouse Id array
+ * @apiParam {String[]} [ownerUser_name] Owner login name or full name
+ * @apiParam {Number[]} [ownerUser_id] Owner user id
+ * @apiParam {Number[]} [mouseSID] Mouse SID array
+ * @apiParam {DateTime} [endDate] End date
+ * @apiParam {String} [endType] End type
+ * @apiParam {String} [endReason] End reason
+ * @apiParam {String} [comment] Comment
+ * @apiParam {String[]="ENDED","STOCK", "MATING", "WEANLING", "PUP","ORDERED"} [mouseState] Mouse State
+ * @apiParam {String[]} [studyCode] Study Code
+ * @apiParam {String="ACTIVE"} [studyState] Study State
+ * @apiParam {DateTime} [sinceDateTime] Return all changed mice after this datetime
+ * @apiParam {Number} [numberPerPage] Number of Records per Page, default is 200
+ * @apiParam {Number} [pageNo] Page No
+ * 
+ * @apiUse ResponseFormat
+ * @apiUse endMiceResp
+ *
+ * @apiUse TokenErrorResp
+ * @apiSampleRequest /v1.1/mouse 
+ */
+

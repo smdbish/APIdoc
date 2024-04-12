@@ -28,6 +28,8 @@ module.exports = {
     "login",
     "logout",
     "save",
+    "getMouse",
+    "endMice"
   ],
   template: {
     forceLanguage: 'en', // 
