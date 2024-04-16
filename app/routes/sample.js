@@ -3,8 +3,8 @@
  * @apiDefine SampleResp
  * @apiSuccess {Object[]} respObj Sample Objects (Array)
  * @apiSuccess {Number} respObj.id Sample Id
- * @apiSuccess {String} respObj.barCode Sample barcode
- * @apiSuccess {String} respObj.tissueOorgan Tissue / Organ
+ * @apiSuccess {String} respObj.barcode Sample barcode
+ * @apiSuccess {String} respObj.tissueOrgan Tissue / Organ
  * @apiSuccess {String} respObj.anatomicRegion anatomic region
  * @apiSuccess {String} respObj.portion Portion
  * @apiSuccess {String} respObj.partialCollDetails partial collection detail
@@ -13,25 +13,20 @@
  * @apiSuccess {String} respObj.collectedBy collected by
  * @apiSuccess {Number} respObj.studyId Study unique Id
  * @apiSuccess {String} respObj.seqId sequence Id
- * @apiSuccess {String} respObj.litterId Litter unique Id
+ * @apiSuccess {String} respObj.litterSid Litter SID
  * @apiSuccess {String} respObj.altId alt Id / ear mark
  * @apiSuccess {String} respObj.aliquot aliquot
  * @apiSuccess {String} respObj.process 
  * @apiSuccess {String} respObj.bloodDerivative 
  * @apiSuccess {String="M","F","I"} respObj.sex  “M” - male, “F” -female, “I” -unknown
- * @apiSuccess {String} respObj.injectionVolume 
- * @apiSuccess {String} respObj.treatment 
- * @apiSuccess {String} respObj.genoType 
- * @apiSuccess {Number} respObj.vg 
+ * @apiSuccess {String} respObj.genotype 
  * @apiSuccess {String} respObj.studyName 
  * @apiSuccess {String} respObj.sampleVolume 
  * @apiSuccess {String} respObj.organWeight 
  * @apiSuccess {String="Not uploaded" ,"Uploaded","Modified"} respObj.syncStatus 
  * @apiSuccess {String} respObj.groupName 
- * @apiSuccess {String} respObj.routeOfAdm 
- * @apiSuccess {String} respObj.vectorTiter 
- * @apiSuccess {String} respObj.mouseline 
- * @apiSuccess {String} respObj.strain
+ * @apiSuccess {String} respObj.strain Strain/Mouseline name
+ * @apiSuccess {String} respObj.background
  * @apiSuccess {Date} respObj.birthDate
  * @apiSuccess {Date} respObj.endDate
  * @apiSuccess {String} respObj.mouseComment
@@ -53,8 +48,8 @@
  *   			"respObj": [
  *       		{
  *           		"id": 2222,
- *           		"barCode": "SMAAA297",
- *           		"tissueOorgan": "Brain",
+ *           		"barcode": "SMAAA297",
+ *           		"tissueOrgan": "Brain",
  *           		"anatomicRegion": "Midbrain",
  *           		"portion": "L",
  *           		"partialCollDetails": null,
@@ -63,27 +58,22 @@
  *           		"collectedBy": "Test",
  *           		"studyId": 100,
  *           		"seqId": "12",
- *           		"litterId": "622.2",
+ *           		"litterSid": "622.2",
  *           		"altId": null,
  *           		"aliquot": "",
  *           		"process": "Frozen",
  *           		"bloodDerivative": "",
  *           		"sex": "M",
- *           		"injectionVolume": "",
- *           		"treatment": "",
- *           		"genoType": "",
- *           		"vg": null,
+ *           		"genotype": "",
  *           		"studyName": "study-2021-06-2901",
  *           		"sampleVolume": 1,
  *           		"organWeight": "",
  *           		"sampleWeight": "",
  *           		"syncStatus": "Uploaded",
  *           		"groupName": "Without Group",
- *           		"routeOfAdm": null,
- *           		"vectorTiter": null,
  *           		"vectorDescription": null,
- *           		"mouseline": "Adgrl3&lt;tm1Sud&gt;/J",
- *           		"strain": null,
+ *           		"strain": "Adgrl3&lt;tm1Sud&gt;/J",
+ *           		"background": null,
  *           		"birthDate": "2019-09-18",
  *           		"endDate": "2021-07-08",
  *           		"mouseComment": null,
@@ -93,8 +83,8 @@
  *			},
  *			{
  *          		"id": 2223,
- *           		"barCode": "SMAAA298",
- *		  		"tissueOorgan": "Brain",
+ *           		"barcode": "SMAAA298",
+ *		  		"tissueOrgan": "Brain",
  *		  		"anatomicRegion": "Midbrain",
  *		    	"portion": "L",
  *		    	"partialCollDetails": null,
@@ -103,27 +93,22 @@
  *		        "collectedBy": "Test",
  *		        "studyId": 100,
  *		        "seqId": "12",
- *	            "litterId": "622.2",
+ *	            "litterSid": "622.2",
  *	      		"altId": null,
  *		        "aliquot": "",
  *		        "process": "Frozen",
  *	            "bloodDerivative": "",
  *		        "sex": "M",
- *		        "injectionVolume": "",
- *		        "treatment": "",
- *		        "genoType": "",
- *		        "vg": null,
+ *		        "genotype": "",
  *		        "studyName": "study-2021-06-2901",
  *		        "sampleVolume": 2,
  *				"organWeight": "",
  *		        "sampleWeight": "",
  *	 	        "syncStatus": "Uploaded",
  *	            "groupName": "Without Group",
- *		        "routeOfAdm": null,
- *		        "vectorTiter": null,
  *		        "vectorDescription": null,
- *	   	        "mouseline": "Adgrl3&lt;tm1Sud&gt;/J",
- *	            "strain": null,
+ *	   	        "strain": "Adgrl3&lt;tm1Sud&gt;/J",
+ *	            "background": null,
  *		        "birthDate": "2019-09-18",
  *	            "endDate": "2021-07-08",
  *		        "mouseComment": null,

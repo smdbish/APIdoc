@@ -23,7 +23,7 @@
  *          -X GET
  * 
  * @apiUse RequestHeader
- * @apiParam {String} [studyCode] Study Name
+ * @apiParam {String} [code] Study Name
  * @apiParam {DateTime} [sinceDateTime] Query all studies that were changed after this datetime
  * 
  * @apiUse ResponseFormat
@@ -35,14 +35,14 @@
  *			"messageDesc": "SUCCESS",
  *			"respObj": [
  *			    {
- *			        "studyCode": "ISH3432-228",
+ *			        "code": "ISH3432-228",
  *			        "projectName": "EG234",
  *			        "startDate": "2022-08-04T04:00:00Z",
  *			        "endDate": null,
  *			        "studyType": null,
- *			        "studyStatus": null,
+ *			        "status": null,
  *			        "details": "",
- *			        "studyGoals": "test",
+ *			        "title": "test",
  *			        "groupName": [
  *			            "g1",
  *			            "g2"
@@ -80,9 +80,9 @@
  *          -d '{
  *                  "projectName": "ISH234",
  *                  "protocols": ["protocol2"],
- *                  "studyCode": "study2021-01-03-004",
+ *                  "code": "study2021-01-03-004",
  *                  "studyType": "2183578",
- *                  "studyGoals": "goals222",
+ *                  "title": "goals222",
  *                  "status": "status1",
  *                  "startDate": "2020-12-08",
  *                  "endDate": "2021-03-31"
@@ -121,10 +121,10 @@
  /**
  * @apiDefine StudyRequest
  * @apiParam {String} projectName Project Name
- * @apiParam {String} studyCode Study Code
+ * @apiParam {String} code Study Code
  * @apiParam {String[]} [protocols] Protocol Name Array
  * @apiParam {String} [studyType] Study Type
- * @apiParam {String} [studyGoals] Study Goals
+ * @apiParam {String} [title] Study Title
  * @apiParam {String} [status] 
  * @apiParam {Date} [startDate] 
  * @apiParam {Date} [endDate] 
@@ -134,12 +134,7 @@
  * @apiParam {String} [groupInfos.numofanimal]
  * @apiParam {String} [groupInfos.groupdetails]
  * @apiParam {Date} [groupInfos.fromDate]
- * @apiParam {Date} [groupInfos.toDate]
- * @apiParam {String} [groupInfos.treatment] 
- * @apiParam {String} [groupInfos.dose]
- * @apiParam {String} [groupInfos.route] 
- * @apiParam {String} [groupInfos.injedetails] 
- * @apiParam {String} [groupInfos.injectionvolumn]
+ * @apiParam {Date} [groupInfos.toDate] 
  * @apiParam {String} [groupInfos.lotnumber]
  * @apiParam {Object[]} [groupInfos.animals]
  * @apiParam {String} [groupInfos.animals.animalId] 
@@ -156,7 +151,7 @@
  * @apiParamExample {json} Request-Example:
  *     {
  *				"projectName": "ISH234",
- *				"studyCode": "study2023-03-01-001"
+ *				"code": "study2023-03-01-001"
  *     }
  *
  * @apiParamExample {json} Request-Example:
@@ -165,9 +160,9 @@
  *			 "protocols": [
  *				   "protocol2"
  *			 ],
- * 			"studyCode": "study2021-01-03-004",
+ * 			"code": "study2021-01-03-004",
  *			 "studyType": "2183578",
- *			 "studyGoals": "goals222",
+ *			 "title": "goals222",
  *			 "status": "status1",
  *			 "startDate": "2020-12-08",
  *			 "endDate": "2021-03-31",
@@ -179,12 +174,6 @@
  *				     "groupdetails": "fff",
  *				     "fromDate": "2020-12-09",
  *				     "toDate": "2020-12-16",
- * 				     "treatment": "fff",
- *				     "dose": "1",
- *				     "route": "route1",
- *				     "injedetails": "222",
- *				     "injectionvolumn" : "89",
- *				     "lotnumber" : "11;22;33;",
  *				     "animals":[
  *				       {
  *					         "animalId": "344877",
@@ -204,8 +193,6 @@
  *				     "toDate": "2020-12-16",
  *				     "testarticle": "fff",
  *				     "vg": "1",
- *				     "route": "route1",
- *				     "injedetails": "222",
  *				     "animals":[
  *				       {
  *					         "animalId": "7162790",
@@ -248,9 +235,9 @@
  * @apiDefine StudyRequest2
  * @apiBody {String} projectName Project Name
  * @apiBody {String[]} [protocols] Protocol Name Array
- * @apiBody {String} studyCode Study Code
+ * @apiBody {String} code Study Code
  * @apiBody {String} [studyType] Study Type
- * @apiBody {String} [studyGoals] Study Goals
+ * @apiBody {String} [title] Study Title
  * @apiBody {String} [status] 
  * @apiBody {Date} [startDate] 
  * @apiBody {Date} [endDate] 
@@ -261,12 +248,6 @@
  * @apiBody {String} groupInfos.[groupdetails] 
  * @apiBody {Date} groupInfos.[fromDate] 
  * @apiBody {Date} groupInfos.[toDate] 
- * @apiBody {String} groupInfos.[treatment] 
- * @apiBody {String} groupInfos.[dose] 
- * @apiBody {String} groupInfos.[route] 
- * @apiBody {String} groupInfos.[injedetails] 
- * @apiBody {String} groupInfos.[injectionvolumn] 
- * @apiBody {String} groupInfos.[lotnumber] 
  * @apiBody {Object[]} groupInfos.animals
  * @apiBody {String} groupInfos.animals.[animalId] 
  * @apiBody {Date} groupInfos.animals.[addedDate] 
@@ -288,14 +269,14 @@
 
 /**
  * @apiDefine StudyResponse
- * @apiSuccess {String} studyCode Study Code
+ * @apiSuccess {String} code Study Code
  * @apiSuccess {String} projectName Project Name
  * @apiSuccess {Date} startDate Start Date
  * @apiSuccess {Date} endDate End Date
  * @apiSuccess {String} studyType Study Type
- * @apiSuccess {String} studyStatus Study Status
+ * @apiSuccess {String} status Study Status
  * @apiSuccess {String} details Study Details
- * @apiSuccess {String} studyGoals Study Goals
+ * @apiSuccess {String} title Study Title
  * @apiSuccess {String[]} groupName Group Name List
  * @apiSuccess {String[]} groupDetails Group Details List
  * @apiSuccess {DateTime} lastUpdatedDateTime Last updated DateTime 

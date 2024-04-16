@@ -110,37 +110,37 @@
 
  /**
  * @apiDefine MouseRespNew
- * @apiSuccess {Object[]} respObj Mouse Objects (Array)
- * @apiSuccess {Number} respObj.id Mouse Id
+ * @apiSuccess {Object[]} respObj Animal Objects (Array)
+ * @apiSuccess {Number} respObj.id Animal Id
  * @apiSuccess {String} respObj.ownerUser Owner name
  * @apiSuccess {String} respObj.creatorUser Creator name
- * @apiSuccess {Number} respObj.guiSid Mouse SID
+ * @apiSuccess {Number} respObj.guiSid Animal SID
  * @apiSuccess {String} respObj.sex Sex
  * @apiSuccess {Date} respObj.birthDate Birth date
- * @apiSuccess {Number=0,1,2,3,4,5,6} respObj.mouseState Mouse state 0-"Ended", 1-"Stock",2-"Mating",3-"Wealing",4-"Deleted",5-"Pup", 6-"Ordered"
+ * @apiSuccess {Number=0,1,2,3,4,5,6} respObj.state Animal state 0-"Ended", 1-"Stock",2-"Mating",3-"Weanling",4-"Deleted",5-"Pup", 6-"Ordered"
  * @apiSuccess {String} respObj.physicalTag Physical tag
- * @apiSuccess {String} respObj.litter_sid Litter SID
- * @apiSuccess {String} respObj.mouseLine MouseLine
+ * @apiSuccess {String} respObj.litterSid Litter SID
+ * @apiSuccess {String} respObj.strain “Strain/Mouseline name”
  * @apiSuccess {String} respObj.protocol Protocol name
- * @apiSuccess {String} respObj.strain Strain
+ * @apiSuccess {String} respObj.background Background
  * @apiSuccess {String} respObj.generation Generation
  * @apiSuccess {Date} respObj.receivedDate Received date
  * @apiSuccess {Date} respObj.endDate End date 
  * @apiSuccess {Date} respObj.weanDate Wean date 
  * @apiSuccess {Date} respObj.tailTagDate  TailTag date
  * @apiSuccess {Date} respObj.matureDate 
- * @apiSuccess {String} respObj.phenoType 
+ * @apiSuccess {String} respObj.phenotype 
  * @apiSuccess {String} respObj.comment 
  * @apiSuccess {String} respObj.sourceSupplier 
- * @apiSuccess {String} respObj.mouseStatus 
- * @apiSuccess {String} respObj.mouseCategory 
- * @apiSuccess {String} respObj.mouseNotice 
+ * @apiSuccess {String} respObj.status 
+ * @apiSuccess {String} respObj.category 
+ * @apiSuccess {String} respObj.notice 
  * @apiSuccess {String} respObj.endType 
  * @apiSuccess {String} respObj.endReason 
  * @apiSuccess {DateTime} respObj.createdDateTime 
  * @apiSuccess {String} respObj.altId alt ID / ear mark 
- * @apiSuccess {String} respObj.genoType 
- * @apiSuccess {String} respObj.sampleMass
+ * @apiSuccess {String} respObj.genotype 
+ * // @apiSuccess {String} respObj.sampleMass
  * @apiSuccess {String} respObj.studyInfo
  * @apiSuccess {String} respObj.cageSid 
  * @apiSuccess {String} respObj.cageTag
@@ -148,7 +148,7 @@
  * @apiSuccess {DateTime} respObj.lastUpdatedDateTime
  * @apiSuccess {Number} totalPage
  * @apiSuccess {Number} currentPage
- * @apiSuccess {Number} totalNum
+  * @apiSuccess {Number} totalNum
   * @apiSuccessExample {json} Success-Response:
  *     	HTTP/1.1 200 OK
  *		{
@@ -162,30 +162,29 @@
  *          		"guiSid": 2278,
  *           		"sex": 0,
  *         		"birthDate": "2014-09-02",
- *           		"mouseState": 2,
+ *           		"state": 2,
  *           		"physicalTag": "5999ZZ",
- *           		"litter_sid": "193.1",
- *           		"mouseLine": "Adgrl3&lt;tm1Sud&gt;/J",
+ *           		"litterSid": "193.1",
+ *           		"strain": "Adgrl3&lt;tm1Sud&gt;/J",
  *           		"protocol": "P2017-03",
- *           		"strain": null,
+ *           		"background": null,
  *           		"generation": null,
  *           		"receivedDate": null,
  *          		"endDate": null,
  *          		"weanDate": "2014-09-23",
  *        		   	"tailTagDate": null,
  *           		"matureDate": "2014-10-14",
- *           		"phenoType": null,
+ *           		"phenotype": null,
  *           		"comment": "mouse comment2",
  *           		"sourceSupplier": null,
- *           		"mouseStatus": null,
- *           		"mouseCategory": "Kelly",
- *           		"mouseNotice": "Reserved for mating",
+ *           		"status": null,
+ *           		"category": "Kelly",
+ *           		"notice": "Reserved for mating",
  *           		"endType": null,
  *           		"endReason": null,
  *           		"createdDateTime": "2015-04-17T12:32:21Z",
  *           		"altId": "Orange",
- *           		"genoType": "ATG-5(+/1), 2ans(+/+), Cre(+), hsf1a(+/-)",
- *           		"sampleMass": null,
+ *           		"genotype": "ATG-5(+/1), 2ans(+/+), Cre(+), hsf1a(+/-)",
  *           		"studyInfo": "Test1234 [1]",
  *           		"cageSid": "155",
  *           		"cageTag": "tag1001",
@@ -199,30 +198,29 @@
  *          		"guiSid": 2279,
  *           		"sex": 0,
  *         		"birthDate": "2014-09-02",
- *           		"mouseState": 2,
+ *           		"state": 2,
  *           		"physicalTag": "6000ZZ",
- *           		"litter_sid": "193.1",
- *           		"mouseLine": "Adgrl3&lt;tm1Sud&gt;/J",
+ *           		"litterSid": "193.1",
+ *           		"strain": "Adgrl3&lt;tm1Sud&gt;/J",
  *           		"protocol": "P2017-03",
- *           		"strain": null,
+ *           		"background": null,
  *           		"generation": null,
  *           		"receivedDate": null,
  *          		"endDate": null,
  *          		"weanDate": "2014-09-23",
  *        		   	"tailTagDate": null,
  *           		"matureDate": "2014-10-14",
- *           		"phenoType": null,
+ *           		"phenotype": null,
  *           		"comment": "mouse 20230119",
  *           		"sourceSupplier": null,
- *           		"mouseStatus": null,
- *           		"mouseCategory": "Kelly",
- *           		"mouseNotice": "Reserved for mating",
+ *           		"status": null,
+ *           		"category": "Kelly",
+ *           		"notice": "Reserved for mating",
  *           		"endType": null,
  *           		"endReason": null,
  *           		"createdDateTime": "2015-04-17T12:32:21Z",
  *           		"altId": "Orange",
- *           		"genoType": "ATG-5(+/1), 2ans(+/+), Cre(+), hsf1a(+/-)",
- *           		"sampleMass": null,
+ *           		"genotype": "ATG-5(+/1), 2ans(+/+), Cre(+), hsf1a(+/-)",
  *           		"studyInfo": "Test1234 [1]",
  *           		"cageSid": "155",
  *           		"cageTag": null,
@@ -273,9 +271,9 @@
 
   /**
  * @apiVersion 1.1.0
- * @api {get} /external/v1.1/mouse Get Mouse List
- * @apiName getMouse
- * @apiGroup Mouse
+ * @api {get} /external/v1.1/animal Get Animal List
+ * @apiName getAnimal 
+ * @apiGroup Animal
  * @apiDescription Get mouse information api
  * Used to pull information related to a mouse / a group of mice that the API user has Edit/View access to.
  * It supports querying by mouse identifier with owners / mouse state / studyCode / since date time. 
@@ -283,42 +281,42 @@
  * @apiPermission Normal user. The customer should open API access.
  * 
  * @apiExample {curl} Example usage:
- *     curl -i "https://softmouse.net/external/v1.1/mouse?ownerUser_name=test&mouseSID=2278&mouseSID=2279"  \
+ *     curl -i "https://softmouse.net/external/v1.1/animal?ownerUser_name=test&animalSID=2278&animalSID=2279"  \
  *          -H "Content-Type:application/json"  \
  *          -H "Authorization:SMDB-oauthtoken CWKw%ij7h_&8c.VN0XDXwT#WqW!z.A70EmMI" \
  *          -X GET
  * 
  * @apiExample {curl} Example usage:
- *     curl -i "https://softmouse.net/external/v1.1/mouse?studyCode=study2021-01-04-004&studyCode=study2021-01-05-004" \
+ *     curl -i "https://softmouse.net/external/v1.1/animal?studyCode=study2021-01-04-004&studyCode=study2021-01-05-004" \
  *          -H "Content-Type:application/json"  \
  *          -H "Authorization:SMDB-oauthtoken CWKw%ij7h_&8c.VN0XDXwT#WqW!z.A70EmMI" \
  *          -X GET
  * 
  * @apiExample {curl} Example usage:
- *     curl -i "https://softmouse.net/external/v1.1/mouse?sinceDateTime=2021-02-08T00:00:01Z&ownerUser_name=David Yu&ownerUser_name=Meabc Lu"  \
+ *     curl -i "https://softmouse.net/external/v1.1/animal?sinceDateTime=2021-02-08T00:00:01Z&ownerUser_name=David Yu&ownerUser_name=Meabc Lu"  \
  *          -H "Content-Type:application/json" \
  *          -H "Authorization:SMDB-oauthtoken CWKw%ij7h_&8c.VN0XDXwT#WqW!z.A70EmMI" \
  *          -X GET
  * 
  * @apiExample {curl} Example usage:
- *     curl -i "https://softmouse.net/external/v1.1/mouse?sinceDateTime=2023-02-08T00:00:01Z&pageNo=2"  \
+ *     curl -i "https://softmouse.net/external/v1.1/animal?sinceDateTime=2023-02-08T00:00:01Z&pageNo=2"  \
  *          -H "Content-Type:application/json"  \
  *          -H "Authorization:SMDB-oauthtoken CWKw%ij7h_&8c.VN0XDXwT#WqW!z.A70EmMI" \
  *          -X GET
  * 
  * @apiExample {curl} Example usage:
- *     curl -i "https://softmouse.net/external/v1.1/mouse?sinceDateTime=2023-01-08T00:00:01Z&mouseState=ENDED&mouseState=ORDERED"  \
+ *     curl -i "https://softmouse.net/external/v1.1/animal?sinceDateTime=2023-01-08T00:00:01Z&state=ENDED&state=ORDERED"  \
  *          -H "Content-Type:application/json"  \
  *          -H "Authorization:SMDB-oauthtoken CWKw%ij7h_&8c.VN0XDXwT#WqW!z.A70EmMI" \
  *          -X GET
  * 
  *      
  * @apiUse RequestHeader
- * @apiParam {Number[]} [mouseIds] Mouse Id array
+ * @apiParam {Number[]} [AnimalIds] Animal Id array
  * @apiParam {String[]} [ownerUser_name] Owner login name or full name
  * @apiParam {Number[]} [ownerUser_id] Owner user id
- * @apiParam {Number[]} [mouseSID] Mouse SID array
- * @apiParam {String[]="ENDED","STOCK", "MATING", "WEANLING", "PUP","ORDERED"} [mouseState] Mouse State
+ * @apiParam {Number[]} [animalSID] Animal SID array
+ * @apiParam {String[]="ENDED","STOCK", "MATING", "WEANLING", "PUP","ORDERED"} [state] Animal State
  * @apiParam {String[]} [studyCode] Study Code
  * @apiParam {String="ACTIVE"} [studyState] Study State
  * @apiParam {DateTime} [sinceDateTime] Return all changed mice after this datetime
@@ -329,7 +327,7 @@
  * @apiUse MouseRespNew
  *
  * @apiUse TokenErrorResp
- * @apiSampleRequest /v1.1/mouse 
+ * @apiSampleRequest /v1.1/animal 
  */
 
 
@@ -350,17 +348,17 @@
 
   /**
  * @apiVersion 1.1.0
- * @api {put} /external/v1.1/mouse End Mice
- * @apiName endMice
- * @apiGroup Mouse
- * @apiDescription End mice api
- * It supports querying by mouse identifier with owners / mouse state / studyCode / since date time and end selected mice
- * Mouse / a group of mice can be ended if the API user has Edit access for selected mice.
+ * @api {put} /external/v1.1/animal End Animals
+ * @apiName endAnimals
+ * @apiGroup Animal
+ * @apiDescription End Animal api
+ * It supports querying by mouse identifier with owners / animal state / studyCode / since date time and end selected animals
+ *  / a group of animals can be ended if the API user has Edit access for selected animal.
  * 
  * @apiPermission Normal user. The customer should open API access.
  * 
  * @apiExample {curl} Example usage:
- *     curl -i "https://softmouse.net/external/v1.1/mouse?ownerUser_name=test&mouseSID=205&mouseSID=206"  \
+ *     curl -i "https://softmouse.net/external/v1.1/animal?ownerUser_name=test&animalSID=205&animalSID=206"  \
  *          -H "Content-Type:application/json"  \
  *          -H "Authorization:SMDB-oauthtoken CWKw%ij7h_&8c.VN0XDXwT#WqW!z.A70EmMI" \
  *          -d '{"endType" : "Missing",
@@ -369,7 +367,7 @@
  *          -X PUT
  * 
  * @apiExample {curl} Example usage:
- *     curl -i "https://softmouse.net/external/v1.1/mouse??mouseSID=281&ownerUser_name=bluesky \
+ *     curl -i "https://softmouse.net/external/v1.1/animal??animalSID=281&ownerUser_name=bluesky \
  *          -H "Content-Type:application/json"  \
  *          -H "Authorization:SMDB-oauthtoken CWKw%ij7h_&8c.VN0XDXwT#WqW!z.A70EmMI" \
  *          -D '{
@@ -382,7 +380,7 @@
  * 
  * 
  * @apiExample {curl} Example usage:
- *     curl -i "https://softmouse.net/external/v1.1/mouse?mouseSID=223&studyCode=sc56  \
+ *     curl -i "https://softmouse.net/external/v1.1/animal?animalSID=223&studyCode=sc56  \
  *          -H "Content-Type:application/json" \
  *          -H "Authorization:SMDB-oauthtoken CWKw%ij7h_&8c.VN0XDXwT#WqW!z.A70EmMI" \
  *          -D '{
@@ -391,7 +389,7 @@
  *          -X PUT
  * 
  * @apiExample {curl} Example usage:
- *     curl -i "https://softmouse.net/external/v1.1/mouse?mouseIds=1194515&mouseIds=1194516"  \
+ *     curl -i "https://softmouse.net/external/v1.1/animal?animalSID=1194515&animalSID=1194516"  \
  *          -H "Content-Type:application/json"  \
  *          -H "Authorization:SMDB-oauthtoken CWKw%ij7h_&8c.VN0XDXwT#WqW!z.A70EmMI" \
  *         -D '{
@@ -403,15 +401,15 @@
  * 
  *      
  * @apiUse RequestHeader
- * @apiParam {Number[]} [mouseIds] Mouse Id array
+ * @apiParam {Number[]} [animalIds] Animal Id array
  * @apiParam {String[]} [ownerUser_name] Owner login name or full name
  * @apiParam {Number[]} [ownerUser_id] Owner user id
- * @apiParam {Number[]} [mouseSID] Mouse SID array
+ * @apiParam {Number[]} [animalSID] Animal SID array
  * @apiParam {DateTime} [endDate] End date
  * @apiParam {String} [endType] End type
  * @apiParam {String} [endReason] End reason
  * @apiParam {String} [comment] Comment
- * @apiParam {String[]="ENDED","STOCK", "MATING", "WEANLING", "PUP","ORDERED"} [mouseState] Mouse State
+ * @apiParam {String[]="ENDED","STOCK", "MATING", "WEANLING", "PUP","ORDERED"} [state] Animal State
  * @apiParam {String[]} [studyCode] Study Code
  * @apiParam {String="ACTIVE"} [studyState] Study State
  * @apiParam {DateTime} [sinceDateTime] Return all changed mice after this datetime
@@ -422,6 +420,6 @@
  * @apiUse endMiceResp
  *
  * @apiUse TokenErrorResp
- * @apiSampleRequest /v1.1/mouse 
+ * @apiSampleRequest /v1.1/animal 
  */
 

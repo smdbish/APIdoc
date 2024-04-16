@@ -18,7 +18,7 @@ module.exports = {
   // sorting for group, api-name
   order: [
     "User",
-    "Mouse",
+    "Animal",
     "Cage",
     "Study",
     "Sample",
@@ -28,8 +28,8 @@ module.exports = {
     "login",
     "logout",
     "save",
-    "getMouse",
-    "endMice"
+    "getAnimal",
+    "endAnimal"
   ],
   template: {
     forceLanguage: 'en', // 
