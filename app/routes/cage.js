@@ -82,8 +82,8 @@
  
  
  /**
- * @apiVersion 1.0.0
- * @api {get} /external/v1/cage Get Cage List
+ * @apiVersion 1.2.0
+ * @api {get} /external/v1.2/cage Get Cage List
  * @apiName getCageInfo
  * @apiGroup Cage
  * @apiDescription Get cage information api
@@ -91,31 +91,31 @@
  *  It supports querying by cage identifier with cage Id / owners / cage state  / since date time. 
  * @apiPermission Normal user. The customer should open API access.
  * @apiExample {curl} Example usage:
- *     curl -i "https://softmouse.net/external/v1/cage?cageids=210944"  \
+ *     curl -i "https://softmouse.net/external/v1.2/cage?cageids=210944"  \
  *          -H "Content-Type:application/json"  \
  *          -H "Authorization:SMDB-oauthtoken MTAwMDAwMDAwMDU0.MEC-#uJGl->Bgv-7xbYqDdQH5cmN-9EjHR1u" \
  *          -X GET
  *
  * @apiExample {curl} Example usage:
- *     curl -i "https://softmouse.net/external/v1/cage?numberPerPage=10&pageNo=1"  \
+ *     curl -i "https://softmouse.net/external/v1.2/cage?numberPerPage=10&pageNo=1"  \
  *          -H "Content-Type:application/json"  \
  *          -H "Authorization:SMDB-oauthtoken MTAwMDAwMDAwMDU0.MEC-#uJGl->Bgv-7xbYqDdQH5cmN-9EjHR1u" \
  *          -X GET
  *
  * @apiExample {curl} Example usage:
- *     curl -i "https://softmouse.net/external/v1/cage?sinceDateTime=2024-02-08T00:00:01Z&ownerUser_name=bluesky"  \
+ *     curl -i "https://softmouse.net/external/v1.2/cage?sinceDateTime=2024-02-08T00:00:01Z&ownerUser_name=bluesky"  \
  *          -H "Content-Type:application/json"  \
  *          -H "Authorization:SMDB-oauthtoken MTAwMDAwMDAwMDU0.MEC-#uJGl->Bgv-7xbYqDdQH5cmN-9EjHR1u" \
  *          -X GET
  * 
  * @apiExample {curl} Example usage:
- *     curl -i "https://softmouse.net/external/v1/cage?ownerUser_id=54"  \
+ *     curl -i "https://softmouse.net/external/v1.2/cage?ownerUser_id=54"  \
  *          -H "Content-Type:application/json"  \
  *          -H "Authorization:SMDB-oauthtoken MTAwMDAwMDAwMDU0.MEC-#uJGl->Bgv-7xbYqDdQH5cmN-9EjHR1u" \
  *          -X GET
  * 
  * @apiExample {curl} Example usage:
- *     curl -i "https://softmouse.net/external/v1/cage?cageState=INACTIVE&cageState=OVERCROWDED"  \
+ *     curl -i "https://softmouse.net/external/v1.2/cage?cageState=INACTIVE&cageState=OVERCROWDED"  \
  *          -H "Content-Type:application/json"  \
  *          -H "Authorization:SMDB-oauthtoken MTAwMDAwMDAwMDU0.MEC-#uJGl->Bgv-7xbYqDdQH5cmN-9EjHR1u" \
  *          -X GET
@@ -132,6 +132,6 @@
  * @apiUse ResponseFormat
  * @apiUse CageResp
  * @apiUse TokenErrorResp
- * @apiSampleRequest /v1/cage 
+ * @apiSampleRequest /v1.2/cage 
  */
 
