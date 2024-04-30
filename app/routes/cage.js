@@ -5,7 +5,7 @@
  * @apiSuccess {String} respObj.ownerUser Owner name
  * @apiSuccess {String} respObj.creatorUser Creator name
  * @apiSuccess {Number} respObj.cageSid Cage SID
- * @apiSuccess {Number} respObj.state Cage state (Allowed values: “INACTIVE“, “ACTIVE“, “OVERCROWDED“)
+ * @apiSuccess {Number=0,1,2,3,4} respObj.state Cage state 0 -”Inactive”, 1-”Active”, 2-”Overcrowded”, 3- “Deleted”, 4- “Ordered” 
  * @apiSuccess {String} respObj.disposition Cage disposition
  * @apiSuccess {Date}  resObj.setupDate  Cage setup date
  * @apiSuccess {Date}  resObj.endDate   cage end date
@@ -96,6 +96,12 @@
  *          -H "Authorization:SMDB-oauthtoken MTAwMDAwMDAwMDU0.MEC-#uJGl->Bgv-7xbYqDdQH5cmN-9EjHR1u" \
  *          -X GET
  *
+ *  * @apiExample {curl} Example usage:
+ *     curl -i "https://softmouse.net/external/v1.2/cage?cageSID=562&ownerUser_id=78"  \
+ *          -H "Content-Type:application/json"  \
+ *          -H "Authorization:SMDB-oauthtoken MTAwMDAwMDAwMDU0.MEC-#uJGl->Bgv-7xbYqDdQH5cmN-9EjHR1u" \
+ *          -X GET
+ * 
  * @apiExample {curl} Example usage:
  *     curl -i "https://softmouse.net/external/v1.2/cage?numberPerPage=10&pageNo=1"  \
  *          -H "Content-Type:application/json"  \
@@ -122,9 +128,11 @@
  * 
  * @apiUse RequestHeader
  * @apiParam {Number[]} [cageIds] Cage Id array
+ * @apiParam {Number[]} [cageSID] Cage SID array
+ * @apiParam {String[]} [cageType] Cage Type
  * @apiParam {String[]} [ownerUser_name] Owner login name or full name
  * @apiParam {Number[]} [ownerUser_id] Owner user id
- * @apiParam {String[]= “INACTIVE“, “ACTIVE“, “OVERCROWDED“} [cageState] Cage State
+ * @apiParam {String[]= “INACTIVE“, “ACTIVE“, “OVERCROWDED“, "ORDERED"} [cageState] Cage State
  * @apiParam {DateTime} [sinceDateTime] Return all changed cage information after this datetime
  * @apiParam {Number} [numberPerPage] Number of Records per Page
  * @apiParam {Number} [pageNo] Page No.
