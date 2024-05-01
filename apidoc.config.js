@@ -1,6 +1,6 @@
 module.exports = {
   name: "SoftMouse.NET API Specification", 
-  version: "1.1.0", // current version
+  version: "1.2.0", // current version
   description: "", // document description
   title: "SoftMouse.NET API Doc", // browser title
   url: "https://softmouse.net", // 
