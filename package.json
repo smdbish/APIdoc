@@ -14,7 +14,6 @@
     },
     "order": [
       "User",
-      "Mouse",
       "Animal",
       "Cage",
       "Study",
@@ -25,7 +24,6 @@
       "login",
       "logout",
       "save",
-      "getMouse",
       "getAnimal",
       "endAnimal"
     ],

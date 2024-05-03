@@ -18,7 +18,6 @@ module.exports = {
   // sorting for group, api-name
   order: [
     "User",
-    "Mouse",
     "Animal",
     "Cage",
     "Study",
@@ -29,7 +28,6 @@ module.exports = {
     "login",
     "logout",
     "save",
-    "getMouse",
     "getAnimal",
     "endAnimal"
   ],

@@ -1,6 +1,6 @@
  /**
  * @apiDefine CageResp
- * @apiSuccess {Object[]} respObj Mouse Objects (Array)
+ * @apiSuccess {Object[]} respObj Cage Objects (Array)
  * @apiSuccess {Number} respObj.id Cage Id
  * @apiSuccess {String} respObj.ownerUser Owner name
  * @apiSuccess {String} respObj.creatorUser Creator name

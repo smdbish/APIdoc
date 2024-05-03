@@ -367,7 +367,7 @@
  /**
  * @apiIgnore not in the doc
  * @apiVersion 1.0.0
- * @api {get} /external/v1/mouse Get Mouse
+ * @api {get} /external/v1/animal Get Animal List
  * @apiName getMouse
  * @apiGroup Mouse
  * @apiDescription Get mouse information api
@@ -401,11 +401,11 @@
 
   /**
  * @apiVersion 1.1.0
- * @api {get} /external/v1.1/mouse Get Mouse List
- * @apiName getMouse
- * @apiGroup Mouse
+ * @api {get} /external/v1.1/mouse Get Animal List
+ * @apiName getAnimal
+ * @apiGroup Animal
  * @apiDescription Get mouse information api
- * Used to pull information related to a mouse / a group of mice that the API user has Edit/View access to.
+ * used to pull information related to a mouse / a group of mice that the API user has Edit/View access to.
  * It supports querying by mouse identifier with owners / mouse state / studyCode / since date time. 
  * 
  * @apiPermission Normal user. The customer should open API access.
@@ -468,9 +468,9 @@
  * @api {get} /external/v1.2/animal Get Animal List
  * @apiName getAnimal 
  * @apiGroup Animal
- * @apiDescription Get mouse information api
- * Used to pull information related to a mouse / a group of mice that the API user has Edit/View access to.
- * It supports querying by mouse identifier with owners / mouse state / studyCode / since date time. 
+ * @apiDescription Get animal information api
+ * used to pull information related to a animal / a group of animal that the API user has Edit/View access to.
+ * It supports querying by animal identifier with owners / animal state / studyCode / since date time. 
  * 
  * @apiPermission Normal user. The customer should open API access.
  * 
@@ -546,7 +546,7 @@
  * @apiName endAnimals
  * @apiGroup Animal
  * @apiDescription End Animal api
- * It supports querying by mouse identifier with owners / animal state / studyCode / since date time and end selected animals
+ *  supports querying by animal identifier with owners / animal state / studyCode / since date time and end selected animals
  *  / a group of animals can be ended if the API user has Edit access for selected animal.
  * 
  * @apiPermission Normal user. The customer should open API access.
