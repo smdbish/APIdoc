@@ -599,8 +599,8 @@
  * @apiParam {String[]} [ownerUser_name] Owner login name or full name
  * @apiParam {Number[]} [ownerUser_id] Owner user id
  * @apiParam {Number[]} [animalSID] Animal SID array
- * @apiParam {DateTime} [endDate] End date
- * @apiParam {String} [endType] End type
+ * @apiParam {DateTime} endDate End date
+ * @apiParam {String} endType End type
  * @apiParam {String} [endReason] End reason
  * @apiParam {String} [comment] Comment
  * @apiParam {String[]="ENDED","STOCK", "MATING", "WEANLING", "PUP","ORDERED"} [state] Animal State
