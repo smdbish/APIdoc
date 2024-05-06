@@ -279,7 +279,7 @@
  * @api {get} /external/v1/sample Get Sample
  * @apiName getSample
  * @apiGroup Sample
- * @apiDescription Get sample information api
+ * @apiDescription The Get Sample api call is used to pull information on one, or a group of study samples. The API user must have View access on those records.
  * 
  * @apiPermission Normal user. The customer should open API access.
  * @apiExample {curl} Example usage:
@@ -309,7 +309,7 @@
  * @api {get} /external/v1.2/sample Get Sample
  * @apiName getSample
  * @apiGroup Sample
- * @apiDescription Get sample information api
+ * @apiDescription The Get Sample api call is used to pull information on one, or a group of study samples. The API user must have View access on those records.
  * 
  * @apiPermission Normal user. The customer should open API access.
  * @apiExample {curl} Example usage:
@@ -339,7 +339,7 @@
  * @api {put} /external/v1/sample/status Update Sample SyncStatus
  * @apiName updateSampleSyncStatus
  * @apiGroup Sample
- * @apiDescription Used to update a sync column for samples in SoftMose.NET after a getSampleInformation pull to confirm the action was successful
+ * @apiDescription The Update Sample SyncStatus api call is used to confirm a successful Get Sample call by updating the samples' sync column
  * 
  * @apiPermission Normal user. The customer should open API access.
  * @apiExample {curl} Example usage:

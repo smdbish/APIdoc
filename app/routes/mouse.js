@@ -370,10 +370,7 @@
  * @api {get} /external/v1/animal Get Animal List
  * @apiName getMouse
  * @apiGroup Mouse
- * @apiDescription Get mouse information api
- * Get mouse information by id (array) 
- * OR owner name (full name or login name) + SID (array)
- * owner user id + SID (array)
+ * @apiDescription The Get Animal api call is used to pull information on one, or a group of animals. The API user must have View access on those records.
  * 
  * @apiPermission Normal user. The customer should open API access.
  * 
@@ -401,7 +398,7 @@
 
   /**
  * @apiVersion 1.1.0
- * @api {get} /external/v1.1/mouse Get Animal List
+ * @api {get} /external/v1.1/mouse Get Animal
  * @apiName getAnimal
  * @apiGroup Animal
  * @apiDescription Get mouse information api
@@ -465,12 +462,10 @@
 
   /**
  * @apiVersion 1.2.0
- * @api {get} /external/v1.2/animal Get Animal List
+ * @api {get} /external/v1.2/animal Get Animal
  * @apiName getAnimal 
  * @apiGroup Animal
- * @apiDescription Get animal information api
- * used to pull information related to a animal / a group of animal that the API user has Edit/View access to.
- * It supports querying by animal identifier with owners / animal state / studyCode / since date time. 
+ * @apiDescription The Get Animal api call is used to pull information on one, or a group of animals. The API user must have View access on those records.
  * 
  * @apiPermission Normal user. The customer should open API access.
  * 
@@ -527,7 +522,7 @@
 
   
  /**
- * @apiDefine endMiceResp
+ * @apiDefine endAnimalResp
  *
  * @apiSuccessExample {json} Success-Response:
  * 
@@ -545,9 +540,7 @@
  * @api {put} /external/v1.2/animal End Animals
  * @apiName endAnimals
  * @apiGroup Animal
- * @apiDescription End Animal api
- *  supports querying by animal identifier with owners / animal state / studyCode / since date time and end selected animals
- *  / a group of animals can be ended if the API user has Edit access for selected animal.
+ * @apiDescription The End Animal call is used to end one, or group of queried animals given an End Date and Type. The API user must have Edit access on those records.
  * 
  * @apiPermission Normal user. The customer should open API access.
  * 
@@ -599,7 +592,7 @@
  * @apiParam {String[]} [ownerUser_name] Owner login name or full name
  * @apiParam {Number[]} [ownerUser_id] Owner user id
  * @apiParam {Number[]} [animalSID] Animal SID array
- * @apiParam {DateTime} endDate End date
+ * @apiParam {DateTime} [endDate] End date
  * @apiParam {String} endType End type
  * @apiParam {String} [endReason] End reason
  * @apiParam {String} [comment] Comment
@@ -611,7 +604,7 @@
  * @apiParam {Number} [pageNo] Page No
  * 
  * @apiUse ResponseFormat
- * @apiUse endMiceResp
+ * @apiUse endAnimalResp
  *
  * @apiUse TokenErrorResp
  * @apiSampleRequest /v1.2/animal 

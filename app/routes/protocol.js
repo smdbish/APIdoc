@@ -56,7 +56,7 @@
  * @api {get} /external/v1/protocol Get Protocol
  * @apiName getProtocol
  * @apiGroup Protocol
- * @apiDescription Get protocol information api
+ * @apiDescription The Get Protocol api call is used to pull information on one, or a group of protocols. The API user must have View access on those records.
  * 
  * @apiPermission Normal user. The customer should open API access.
  * @apiExample {curl} Example usage:

@@ -1,9 +1,9 @@
 /**
  * @apiVersion 1.0.0
- * @api {get} /external/v1/study Get Study Information
+ * @api {get} /external/v1/study Get Study
  * @apiName getStudyInformation
  * @apiGroup Study
- * @apiDescription Used to get study information from SoftMouse.NET by Study Name.
+ * @apiDescription The Get Study api call is used to pull information on one, or a group of studies. The API user must have View access on those records.
  * 
  * @apiPermission Normal user. The customer should open API access.
  * @apiExample {curl} Example usage:
@@ -65,14 +65,14 @@
 
 /**
  * @apiVersion 1.2.0
- * @api {get} /external/v1.2/study Get Study Information
+ * @api {get} /external/v1.2/study Get Study
  * @apiName getStudyInformation
  * @apiGroup Study
- * @apiDescription Used to get study information from SoftMouse.NET by Study Name.
+ * @apiDescription The Get Study api call is used to pull information on one, or a group of studies. The API user must have View access on those records.
  * 
  * @apiPermission Normal user. The customer should open API access.
  * @apiExample {curl} Example usage:
- *     curl -i "https://softmouse.net/external/v1.2/study?studyName=study20"  \
+ *     curl -i "https://softmouse.net/external/v1.2/study?code=study20"  \
  *          -H "Content-Type:application/json"  \
  *          -H "Authorization:SMDB-oauthtoken MTAwMDAwMDAwMDU0.MEC-#uJGl->Bgv-7xbYqDdQH5cmN-9EjHR1u" \
  *          -X GET
@@ -84,7 +84,7 @@
  *          -X GET
  * 
  * @apiUse RequestHeader
- * @apiParam {String} [code] Study Name
+ * @apiParam {String} [code] Study Code
  * @apiParam {DateTime} [sinceDateTime] Query all studies that were changed after this datetime
  * 
  * @apiUse ResponseFormat
@@ -129,10 +129,10 @@
  
 /**
  * @apiVersion 1.0.0
- * @api {post} /external/v1/study Add a New Study
+ * @api {post} /external/v1/study Add Study
  * @apiName addNewStudy
  * @apiGroup Study
- * @apiDescription Used to create a new Study in SoftMouse.NET.
+ * @apiDescription The Add Study api call is used to create a new study. The API user must have Create permission for studies.
  * 
  * @apiPermission Normal user. The customer should open API access.
  * @apiExample {curl} Example usage:
@@ -181,10 +181,10 @@
  
 /**
  * @apiVersion 1.2.0
- * @api {post} /external/v1.2/study Add a New Study
+ * @api {post} /external/v1.2/study Add Study
  * @apiName addNewStudy
  * @apiGroup Study
- * @apiDescription Used to create a new Study in SoftMouse.NET.
+ * @apiDescription The Add Study api call is used to create a new study. The API user must have Create permission for studies.
  * 
  * @apiPermission Normal user. The customer should open API access.
  * @apiExample {curl} Example usage:
@@ -506,30 +506,32 @@
   
 /**
  * @apiDefine StudyResponse
- * @apiSuccess {String} studyCode Study Code
- * @apiSuccess {String} projectName Project Name
- * @apiSuccess {Date} startDate Start Date
- * @apiSuccess {Date} endDate End Date
- * @apiSuccess {String} studyType Study Type
- * @apiSuccess {String} studyStatus Study Status
- * @apiSuccess {String} details Study Details
- * @apiSuccess {String} studyGoals Study Goals
- * @apiSuccess {String[]} groupName Group Name List
- * @apiSuccess {String[]} groupDetails Group Details List
- * @apiSuccess {DateTime} lastUpdatedDateTime Last updated DateTime 
+ * @apiSuccess {Object[]} respObj Study Objects (Array)
+ * @apiSuccess {String} respObj.studyCode Study Code
+ * @apiSuccess {String} respObj.projectName Project Name
+ * @apiSuccess {Date} respObj.startDate Start Date
+ * @apiSuccess {Date} respObj.endDate End Date
+ * @apiSuccess {String} respObj.studyType Study Type
+ * @apiSuccess {String} respObj.studyStatus Study Status
+ * @apiSuccess {String} respObj.details Study Details
+ * @apiSuccess {String} respObj.studyGoals Study Goals
+ * @apiSuccess {String[]} respObj.groupName Group Name List
+ * @apiSuccess {String[]} respObj.groupDetails Group Details List
+ * @apiSuccess {DateTime} respObj.lastUpdatedDateTime Last updated DateTime 
  */ 
 
 /**
  * @apiDefine StudyResponseNew
- * @apiSuccess {String} code Study Code
- * @apiSuccess {String} projectName Project Name
- * @apiSuccess {Date} startDate Start Date
- * @apiSuccess {Date} endDate End Date
- * @apiSuccess {String} studyType Study Type
- * @apiSuccess {String} status Study Status
- * @apiSuccess {String} details Study Details
- * @apiSuccess {String} title Study Title
- * @apiSuccess {String[]} groupName Group Name List
- * @apiSuccess {String[]} groupDetails Group Details List
- * @apiSuccess {DateTime} lastUpdatedDateTime Last updated DateTime 
+ * @apiSuccess {Object[]} respObj Study Objects (Array)
+ * @apiSuccess {String} respObj.code Study Code
+ * @apiSuccess {String} respObj.projectName Project Name
+ * @apiSuccess {Date} respObj.startDate Start Date
+ * @apiSuccess {Date} respObj.endDate End Date
+ * @apiSuccess {String} respObj.studyType Study Type
+ * @apiSuccess {String} respObj.status Study Status
+ * @apiSuccess {String} respObj.details Study Details
+ * @apiSuccess {String} respObj.title Study Title
+ * @apiSuccess {String[]} respObj.groupName Group Name List
+ * @apiSuccess {String[]} respObj.groupDetails Group Details List
+ * @apiSuccess {DateTime} respObj.lastUpdatedDateTime Last updated DateTime 
  */ 

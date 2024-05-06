@@ -86,9 +86,8 @@
  * @api {get} /external/v1.2/cage Get Cage List
  * @apiName getCageInfo
  * @apiGroup Cage
- * @apiDescription Get cage information api
- *  Used to pull information related to a cage / a group of cages that the API user has Edit/View access to.
- *  It supports querying by cage identifier with cage Id / owners / cage state  / since date time. 
+ * @apiDescription The Get Cage api call is used to pull information on one, or a group of cages. The API user must have View access on those records.
+ * 
  * @apiPermission Normal user. The customer should open API access.
  * @apiExample {curl} Example usage:
  *     curl -i "https://softmouse.net/external/v1.2/cage?cageids=210944"  \
