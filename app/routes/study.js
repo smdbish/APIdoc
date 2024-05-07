@@ -7,7 +7,7 @@
  * 
  * @apiPermission Normal user. The customer should open API access.
  * @apiExample {curl} Example usage:
- *     curl -i "https://softmouse.net/external/v1/study?studyName=study20"  \
+ *     curl -i "https://softmouse.net/external/v1/study?studyCode=study20"  \
  *          -H "Content-Type:application/json"  \
  *          -H "Authorization:SMDB-oauthtoken MTAwMDAwMDAwMDU0.MEC-#uJGl->Bgv-7xbYqDdQH5cmN-9EjHR1u" \
  *          -X GET

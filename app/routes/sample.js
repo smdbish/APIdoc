@@ -165,7 +165,7 @@
  * @apiSuccess {String} respObj.bloodDerivative 
  * @apiSuccess {String="M","F","I"} respObj.sex  “M” - male, “F” -female, “I” -unknown
  * @apiSuccess {String} respObj.genotype 
- * @apiSuccess {String} respObj.studyName 
+ * @apiSuccess {String} respObj.studyCode 
  * @apiSuccess {String} respObj.sampleVolume 
  * @apiSuccess {String} respObj.organWeight 
  * @apiSuccess {String="Not uploaded" ,"Uploaded","Modified"} respObj.syncStatus 
@@ -210,7 +210,7 @@
  *           		"bloodDerivative": "",
  *           		"sex": "M",
  *           		"genotype": "",
- *           		"studyName": "study-2021-06-2901",
+ *           		"studyCode": "study-2021-06-2901",
  *           		"sampleVolume": 1,
  *           		"organWeight": "",
  *           		"sampleWeight": "",
@@ -245,7 +245,7 @@
  *	            "bloodDerivative": "",
  *		        "sex": "M",
  *		        "genotype": "",
- *		        "studyName": "study-2021-06-2901",
+ *		        "studyCode": "study-2021-06-2901",
  *		        "sampleVolume": 2,
  *				"organWeight": "",
  *		        "sampleWeight": "",
@@ -313,7 +313,7 @@
  * 
  * @apiPermission Normal user. The customer should open API access.
  * @apiExample {curl} Example usage:
- *     curl -i "https://softmouse.net/external/v1.2/sample?studyName=study-2021-06-2901&syncStatus=0&state=0&numberPerPage=10&pageNo=1"  \
+ *     curl -i "https://softmouse.net/external/v1.2/sample?studyCode=study-2021-06-2901&syncStatus=0&state=0&numberPerPage=10&pageNo=1"  \
  *          -H "Content-Type:application/json"  \
  *          -H "Authorization:SMDB-oauthtoken MTAwMDAwMDAwMDU0.MEC-#uJGl->Bgv-7xbYqDdQH5cmN-9EjHR1u" \
  *          -X GET
@@ -321,7 +321,7 @@
  * 
  * @apiUse RequestHeader
  * @apiParam {Number} [studyId] Study Id
- * @apiParam {String} [studyName] Study Name
+ * @apiParam {String} [studyCode] Study Code
  * @apiParam {Number[]} [sampleId] Sample Id Array
  * @apiParam {Number} [syncStatus] Synchronization Status
  * @apiParam {Number} [state] Sample State

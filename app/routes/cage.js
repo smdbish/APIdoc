@@ -83,7 +83,7 @@
  
  /**
  * @apiVersion 1.2.0
- * @api {get} /external/v1.2/cage Get Cage List
+ * @api {get} /external/v1.2/cage Get Cage
  * @apiName getCageInfo
  * @apiGroup Cage
  * @apiDescription The Get Cage api call is used to pull information on one, or a group of cages. The API user must have View access on those records.
