@@ -82,19 +82,21 @@
  
  /**
  * @apiVersion 1.0.0
- * @api {post} /external/v1/user/refreshToken Refresh Token
+ * @api {post} /external/v1/refreshToken Refresh Token
  * @apiName refreshToken
  * @apiGroup User
  * @apiDescription Used if the user token is expired. Call this API to get a new user token.
  * 
  * @apiPermission Normal user. The customer should open API access.
  * 
+ * @apiBody {String} username User Name
+ * @apiBody {String} token Token
+ * 
  * @apiExample {curl} Example usage:
- *     curl -i "https://softmouse.net/external/v1/user/login"  \
+ *     curl -i "https://softmouse.net/external/v1/refreshToken"  \
  *          -H "Content-Type:application/json"  \
  *          -d "{\"username\":\"test\", \"token\":\"CWKw%ij7h_&8c.VN0XDXwT#WqW!z.A70EmMI\"}"  \
  *          -X POST
- * @apiUse RequestHeader
  * 
  * @apiUse ResponseFormat
  * @apiSuccessExample {json} Success-Response:
@@ -109,8 +111,21 @@
  *			}
  *		}
  * 
- * @apiUse TokenErrorResp
- * @apiSampleRequest /v1/user/logout 
+ * @apiErrorExample {json} Error-Response:
+ *		Error 302: 
+ *		{
+ *   			"messageCode": "451",
+ *   			"messageDesc": "Incorrect token.",
+ *   			"respObj": ""
+ *		}
+ * @apiErrorExample {json} Error-Response:
+ *		Error 302: 
+ *		{
+ *   			"messageCode": "453",
+ *   			"messageDesc": "Token is not expired.",
+ *   			"respObj": ""
+ *		}
+ * @apiSampleRequest /v1/refreshToken 
  */
  
 
