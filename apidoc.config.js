@@ -1,6 +1,6 @@
 module.exports = {
   name: "SoftMouse.NET API Specification", 
-  version: "1.1.0", // current version
+  version: "1.3.0", // current version
   description: "", // document description
   title: "SoftMouse.NET API Doc", // browser title
   url: "https://softmouse.net", // 
@@ -18,7 +18,8 @@ module.exports = {
   // sorting for group, api-name
   order: [
     "User",
-    "Mouse",
+    "Animal",
+    "Cage",
     "Study",
     "Sample",
     "Protocol",
@@ -27,6 +28,8 @@ module.exports = {
     "login",
     "logout",
     "save",
+    "getAnimal",
+    "endAnimal"
   ],
   template: {
     forceLanguage: 'en', // 

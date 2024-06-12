@@ -16,17 +16,17 @@
  * @apiErrorExample {json} Error-Response:
  *		{
  *   			"messageCode": "406",
- *   			"messageDesc": "Authrization fail.",
+ *   			"messageDesc": "Authorization fail.",
  *		}
  * @apiErrorExample {json} Error-Response:
  *		{
  *   			"messageCode": "455",
- *   			"messageDesc": "Authrization fail - invalid token.",
+ *   			"messageDesc": "Authorization fail - invalid token.",
  *		}
  * @apiErrorExample {json} Error-Response:
  *		{
  *   			"messageCode": "452",
- *   			"messageDesc": "Authrization fail, Token expired.",
+ *   			"messageDesc": "Authorization fail, Token expired.",
  *		}
  * @apiErrorExample {json} Error-Response:
  *		{
