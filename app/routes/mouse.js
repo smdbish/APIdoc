@@ -691,7 +691,7 @@
  * 
  */
 
-  /**
+/**
  * @apiVersion 1.2.0
  * @api {put} /external/v1.2/animal End Animals
  * @apiName endAnimals
@@ -700,14 +700,31 @@
  * 
  * @apiPermission Normal user. The customer should open API access.
  * 
- * @apiExample {curl} Example usage:
- *     curl -i "https://softmouse.net/external/v1.2/animal?ownerUser_name=test&animalSID=205&animalSID=206"  \
+ *  @apiExample {curl} Example usage:
+ *     curl -i "https://softmouse.net/external/v1.2/animal?animalIds=1153138
  *          -H "Content-Type:application/json"  \
  *          -H "Authorization:SMDB-oauthtoken CWKw%ij7h_&8c.VN0XDXwT#WqW!z.A70EmMI" \
- *          -d '{"endType" : "Missing",
- *              "endReason" : "Flood"
+ *          -D '{
+ *                 "endReason":"Experimental",
+ *                 "endType" :"Transfered",
+ *                 "endDate":"2024-04-08T00:00:01Z",
  *              }'
  *          -X PUT
+ *
+ * 
+ *  *  @apiExample {curl} Example usage:
+ *     curl -i "https://softmouse.net/external/v1.2/animal?
+ *          -H "Content-Type:application/json"  \
+ *          -H "Authorization:SMDB-oauthtoken CWKw%ij7h_&8c.VN0XDXwT#WqW!z.A70EmMI" \
+ *          -D '{
+ *                 "endReason":"Flood",
+ *                 "endType" :"Missing",
+ *                 "endDate":"2024-04-08T00:00:01Z",
+ *                 "comment":"Involved in study"
+ *                 "animalIds":[1153070,1153076,1153132,1153134]
+ *              }'
+ *          -X PUT
+ *
  * 
  * @apiExample {curl} Example usage:
  *     curl -i "https://softmouse.net/external/v1.2/animal??animalSID=281&ownerUser_name=bluesky \
@@ -721,6 +738,14 @@
  *              }'
  *          -X PUT
  * 
+ * @apiExample {curl} Example usage:
+ *     curl -i "https://softmouse.net/external/v1.2/animal?ownerUser_name=test&animalSID=205&animalSID=206"  \
+ *          -H "Content-Type:application/json"  \
+ *          -H "Authorization:SMDB-oauthtoken CWKw%ij7h_&8c.VN0XDXwT#WqW!z.A70EmMI" \
+ *          -d '{"endType" : "Missing",
+ *              "endReason" : "Flood"
+ *              }'
+ *          -X PUT
  * 
  * @apiExample {curl} Example usage:
  *     curl -i "https://softmouse.net/external/v1.2/animal?animalSID=223&studyCode=sc56  \
@@ -728,9 +753,12 @@
  *          -H "Authorization:SMDB-oauthtoken CWKw%ij7h_&8c.VN0XDXwT#WqW!z.A70EmMI" \
  *          -D '{
  *                  "endType": "Found Dead"
+ *                  "endDate":"2024-06-01T00:00:01Z",
+ *                  "animalIds":[15450,45454,132323, 153132,11534]
  *              }'
  *          -X PUT
  * 
+ *
  * @apiExample {curl} Example usage:
  *     curl -i "https://softmouse.net/external/v1.2/animal?animalSID=1194515&animalSID=1194516"  \
  *          -H "Content-Type:application/json"  \
@@ -741,17 +769,28 @@
  *              }'
  *          -X PUT
  * 
+ * @apiExample {curl} Example usage:
+ *     curl -i "https://softmouse.net/external/v1.2/animal?animalSID=223&studyCode=sc56  \
+ *          -H "Content-Type:application/json" \
+ *          -H "Authorization:SMDB-oauthtoken CWKw%ij7h_&8c.VN0XDXwT#WqW!z.A70EmMI" \
+ *          -D '{
+ *                  "endType": "Found Dead"
+ *              }'
+ *          -X PUT
+ * 
+ * 
  * 
  *      
  * @apiUse RequestHeader
- * @apiParam {Number[]} [animalIds] Animal Id array
+ * @apiParam {Number[]} [animalIds] Animal Id 
  * @apiParam {String[]} [ownerUser_name] Owner login name or full name
  * @apiParam {Number[]} [ownerUser_id] Owner user id
  * @apiParam {Number[]} [animalSID] Animal SID array
- * @apiParam {DateTime} [endDate] End date
- * @apiParam {String} endType End type
- * @apiParam {String} [endReason] End reason
- * @apiParam {String} [comment] Comment
+ * @apiBody {Number[]} [animalIds=[]] Animal Id array
+ * @apiBody {DateTime} [endDate] End date
+ * @apiBody {String} endType End type
+ * @apiBody {String} [endReason] End reason
+ * @apiBody {String} [comment] Comment
  * @apiParam {String[]="ENDED","STOCK", "MATING", "WEANLING", "PUP","ORDERED"} [state] Animal State
  * @apiParam {String[]} [studyCode] Study Code
  * @apiParam {String="ACTIVE"} [studyState] Study State
